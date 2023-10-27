@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-interface Props {
-  title: string;
-}
-const ButtonNonHydrate: React.FC<Props> = ({ title }) => {
+const Button = () => {
   const [isHydrate, setIsHydrate] = useState(false);
   useEffect(() => {
     setIsHydrate(true);
   }, []);
   return (
-    <div className="w-fit h-fit p-2 rounded-sm" style={{ backgroundColor: isHydrate ? "green" : "red" }}>{title}</div>
+    <div className="w-fit h-fit p-2 rounded-sm" style={{ backgroundColor: isHydrate ? "green" : "red" }}>{isHydrate? "Hydrate" : "Non"}</div>
   );
 };
 
-export default ButtonNonHydrate;
+export default Button;
